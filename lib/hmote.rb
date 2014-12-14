@@ -33,7 +33,7 @@ class HMote
   module Helpers
     def hmote(file, params = {}, context = self)
       hmote_cache[file] ||= HMote.parse(File.read(file), context, params.keys)
-      hmote_cache[file][params]
+      hmote_cache[file].call(params)
     end
 
     def hmote_cache
