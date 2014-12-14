@@ -1,7 +1,11 @@
 require "hache"
 
 class HMote
-  PATTERN = /^(\n)|^\s*(%)\s*(.*?)(?:\n|\Z)|(<\?)\s+(.*?)\s+\?>|(\{\{!?)(.*?)\}\}/m
+  PATTERN = /^(\n)|             # new lines.
+    ^\s*(%)\s*(.*?)(?:\n|\Z)|   # % code
+    (<\?)\s+(.*?)\s+\?>|        # <? multi-line code ?>
+    (\{\{!?)(.*?)\}\}           # {{ escaped }} or {{! unescaped }}
+  /mx
 
   def self.parse(template, context = self, vars = [])
     terms = template.split(PATTERN)
