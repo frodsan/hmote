@@ -3,6 +3,12 @@ hmote
 
 Minimal template engine with default escaping.
 
+Description
+-----------
+
+HMote is based on [Mote][mote] and uses [Hache][hache]
+to auto-escape HTML special characters.
+
 Basic Usage
 -----------
 
@@ -206,4 +212,6 @@ $ gem install hmote
 ```
 
 [cuba]: http://cuba.is
+[mote]: https://github.com/soveran/mote
+[hache]: https://github.com/frodsan/hache
 [xss]: http://en.wikipedia.org/wiki/Cross-Site_Scripting
