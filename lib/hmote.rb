@@ -1,10 +1,10 @@
 require "hache"
 
 class HMote
-  PATTERN = /^(\n)|             # new lines.
-    ^\s*(%)\s*(.*?)(?:\n|\Z)|   # % code
+  PATTERN = /^(\n)|             # newlines.
+    ^\s*(%)\s*(.*?)(?:\n|\Z)|   # % single-line code
     (<\?)\s+(.*?)\s+\?>|        # <? multi-line code ?>
-    (\{\{!?)(.*?)\}\}           # {{ escaped }} or {{! unescaped }}
+    (\{\{!?)(.*?)\}\}           # {{ escape }} or {{! unescape }}
   /mx
 
   def self.parse(template, context = self, vars = [])
