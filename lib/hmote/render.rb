@@ -10,6 +10,7 @@ module HMote::Render
   end
 
   def render(template, params = {}, layout = settings[:hmote][:layout])
+    res.headers["Content-Type"] ||= "text/html; charset=utf-8"
     res.write(view(template, params, layout))
   end
 
