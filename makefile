@@ -1,7 +1,8 @@
+.DEFAULT_GOAL := test
 .PHONY: test
 
 gem:
-	gem build hmote.gemspec
+	gem build *.gemspec
 
 test:
 	cutest test/*.rb
