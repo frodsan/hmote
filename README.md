@@ -6,7 +6,7 @@ Minimal template engine with default escaping.
 Description
 -----------
 
-HMote is based on [Mote][mote] and uses [Hache][hache]
+HMote is a fork of [Mote][mote] that uses [Hache][hache]
 to auto-escape HTML special characters.
 
 Basic Usage
