@@ -67,7 +67,8 @@ scope("parsing") do
 
   test "multi-line XML-style directives" do
     template = (<<-EOT).gsub(/^    /, "")
-    <? res = ""
+    <?
+       res = ""
        [1, 2, 3].each_with_index do |item, idx|
          res << "%d. %d\n" % [idx + 1, item * item]
        end
