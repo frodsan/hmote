@@ -1,4 +1,4 @@
-require_relative "../lib/hmote"
+require_relative "../../lib/hmote"
 
 include HMote::Helpers
 
