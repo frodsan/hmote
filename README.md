@@ -22,18 +22,23 @@ template.call
 # => "your template goes here!"
 ```
 
-HMote recognizes two tags to evaluate Ruby code: `%` and `{{}}`.
-The difference between them is that while the `%` tag only evaluates
-the code, the `{{}}` tag also prints the result to the template.
+HMote recognizes three tags to evaluate Ruby code: `%`, `{{}}` and `<? ?>`.
+The difference between them is that while the `%` and `<? ?>` tags only
+evaluate the code, the `{{}}` tag also prints the result to the template.
 
 Imagine that your template looks like this:
 
 ```ruby
+% # single-line code
 % gems = ["rack", "cuba", "hmote"]
 
+<?
+  # multi-line code
+  sorted = gems.sort
+?>
+
 <ul>
-% # this is a comment.
-% gems.sort.each do |gem|
+% sorted.each do |gem|
   <li>{{ gem }}</li>
 % end
 </ul>

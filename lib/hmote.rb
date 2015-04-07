@@ -1,9 +1,10 @@
 require "hache"
 
 class HMote
-  PATTERN = /^(\n)|             # newlines.
-    ^\s*(%)\s*(.*?)(?:\n|\Z)|   # % single-line code
-    (<\?)\s+(.*?)\s+\?>|        # <? multi-line code ?>
+  PATTERN = /
+    ^(\n)                    |  # newlines.
+    ^\s*(%)\s*(.*?)(?:\n|\Z) |  # % single-line code
+    (<\?)\s+(.*?)\s+\?>      |  # <? multi-line code ?>
     (\{\{!?)(.*?)\}\}           # {{ escape }} or {{! unescape }}
   /mx
 
