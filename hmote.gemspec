@@ -12,6 +12,6 @@ Gem::Specification.new do |s|
 
   s.files = `git ls-files`.split("\n")
 
-  s.add_dependency "hache"
-  s.add_development_dependency "cutest"
+  s.add_dependency "hache", "~> 1.1"
+  s.add_development_dependency "cutest", "~> 1.2"
 end
