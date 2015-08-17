@@ -3,6 +3,9 @@ require_relative "../hmote"
 module HMote::Render
   include HMote::Helpers
 
+  CONTENT_TYPE = "Content-Type".freeze
+  DEFAULT_CONTENT_TYPE = "text/html; charset=utf-8"
+
   def self.setup(app)
     app.settings[:hmote] ||= {}
     app.settings[:hmote][:views] ||= File.expand_path("views", Dir.pwd)
@@ -10,7 +13,7 @@ module HMote::Render
   end
 
   def render(template, params = {}, layout = settings[:hmote][:layout])
-    res.headers["Content-Type"] ||= "text/html; charset=utf-8"
+    res.headers[CONTENT_TYPE] ||= DEFAULT_CONTENT_TYPE
     res.write(view(template, params, layout))
   end
 
