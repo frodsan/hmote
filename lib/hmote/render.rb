@@ -8,8 +8,9 @@ module HMote::Render
 
   def self.setup(app)
     app.settings[:hmote] ||= {}
-    app.settings[:hmote][:views] ||= File.expand_path("views", Dir.pwd)
-    app.settings[:hmote][:layout] ||= "layout"
+
+    app.layout("layout")
+    app.view_path("views")
   end
 
   def render(template, params = {}, layout = settings[:hmote][:layout])
@@ -29,5 +30,15 @@ module HMote::Render
 
   def template_path(template)
     return File.join(settings[:hmote][:views], "#{template}.mote")
+  end
+
+  module ClassMethods
+    def layout(name)
+      settings[:hmote][:layout] = name
+    end
+
+    def view_path(path)
+      settings[:hmote][:views] = File.expand_path(path, Dir.pwd)
+    end
   end
 end
