@@ -13,7 +13,7 @@ class HMote
     parts = "Proc.new do |params, __o|\n params ||= {}; __o ||= ''\n"
 
     vars.each do |var|
-      parts << sprintf("%s = params[%s]\n", var, var.inspect)
+      parts << sprintf("%s = params[%p]\n", var, var)
     end
 
     while (term = terms.shift)
