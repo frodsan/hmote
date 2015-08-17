@@ -68,17 +68,16 @@ scope("parsing") do
   test "multi-line XML-style directives" do
     template = (<<-EOT).gsub(/^    /, "")
     <?
-       res = ""
-       [1, 2, 3].each_with_index do |item, idx|
-         res << "%d. %d\n" % [idx + 1, item * item]
-       end
+      # Multiline code evaluation
+      lucky = [1, 3, 7, 9, 13, 15]
+      prime = [2, 3, 5, 7, 11, 13]
     ?>
-    {{ res }}
+
+    {{ lucky & prime }}
     EOT
 
     example = HMote.parse(template)
-
-    assert_equal("\n1. 1\n2. 4\n3. 9\n\n", example.call)
+    assert_equal "\n\n[3, 7, 13]\n", example.call
   end
 
   test "preserve XML directives" do
