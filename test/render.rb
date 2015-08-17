@@ -25,14 +25,6 @@ Cuba.define do
   on "context" do
     res.write partial("context")
   end
-
-  on "absolute" do
-    render("./test/custom_views/custom.mote", title: "Custom")
-  end
-
-  on "absolute_layout" do
-    render("./test/custom_views/custom.mote", title: "Custom Layout")
-  end
 end
 
 scope do
@@ -60,19 +52,5 @@ scope do
     get "/context"
 
     assert last_response.body["App"]
-  end
-
-  test "use of absolute path for template" do
-    get "/absolute"
-
-    assert last_response.body["<title>Custom</title>\n<h1>Custom</h1>"]
-  end
-
-  test "use of absolute path for layout" do
-    Cuba.settings[:hmote][:layout] = "./test/custom_views/layout.mote"
-
-    get "/absolute_layout"
-
-    assert last_response.body["<title>Custom Layout</title>\n<h1>Custom</h1>"]
   end
 end

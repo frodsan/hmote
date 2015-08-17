@@ -26,10 +26,6 @@ module HMote::Render
   end
 
   def template_path(template)
-    if template.end_with?(".mote")
-      return template
-    else
-      return File.join(settings[:hmote][:views], "#{template}.mote")
-    end
+    return File.join(settings[:hmote][:views], "#{template}.mote")
   end
 end
