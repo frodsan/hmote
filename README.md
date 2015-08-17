@@ -167,11 +167,14 @@ in a folder named `views` and that they use the `.mote` extension. Also
 for `view` and `render` methods, it assumes that the layout template is
 called `layout.mote`.
 
-The defaults can be changed through the `Cuba.settings` method:
+The defaults can be changed through the `layout` and `view_path` class
+methods:
 
 ```ruby
-Cuba.settings[:hmote][:views] = "./views/admin/"
-Cuba.settings[:hmote][:layout] = "admin"
+class App < Cuba
+  layout("admin")
+  view_path("views/admin")
+end
 ```
 
 ### Layouts
