@@ -36,7 +36,7 @@ scope("parsing") do
 
   test "multiline" do
     example = HMote.parse("The\nMan\nAnd\n{{\"The\"}}\nSea")
-    assert_equal("The\nMan\nAnd\nThe\nSea", example[n: 3])
+    assert_equal("The\nMan\nAnd\nThe\nSea", example.call)
   end
 
   test "quotes" do
