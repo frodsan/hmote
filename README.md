@@ -218,5 +218,5 @@ $ gem install hmote
 
 [cuba]: http://cuba.is
 [mote]: https://github.com/soveran/mote
-[hache]: https://github.com/frodsan/hache
+[hache]: https://github.com/harmoni/hache
 [xss]: http://en.wikipedia.org/wiki/Cross-Site_Scripting
