@@ -14,6 +14,7 @@ module HMote::Render
   end
 
   def render(template, params = {}, layout = settings[:hmote][:layout])
+    res.status ||= 200
     res.headers[CONTENT_TYPE] ||= DEFAULT_CONTENT_TYPE
     res.write(view(template, params, layout))
 
