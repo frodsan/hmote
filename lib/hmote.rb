@@ -13,10 +13,10 @@ class HMote
     parts = "Proc.new do |params, __o|\n params ||= {}; __o ||= ''\n"
 
     vars.each do |var|
-      parts << "%s = params[%s]\n" % [var, var.inspect]
+      parts << sprintf("%s = params[%s]\n", var, var.inspect)
     end
 
-    while term = terms.shift
+    while (term = terms.shift)
       case term
       when "<?"  then parts << "#{terms.shift}\n"
       when "%"   then parts << "#{terms.shift}\n"
