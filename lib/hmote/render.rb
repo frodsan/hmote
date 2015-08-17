@@ -4,7 +4,7 @@ module HMote::Render
   include HMote::Helpers
 
   CONTENT_TYPE = "Content-Type".freeze
-  DEFAULT_CONTENT_TYPE = "text/html; charset=utf-8"
+  DEFAULT_CONTENT_TYPE = "text/html; charset=utf-8".freeze
 
   def self.setup(app)
     app.settings[:hmote] ||= {}
