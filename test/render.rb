@@ -25,6 +25,11 @@ Cuba.define do
   on "context" do
     res.write partial("context")
   end
+
+  on "halt" do
+    render("home", title: "Halt before error")
+    raise "This is invalid"
+  end
 end
 
 scope do
@@ -52,5 +57,11 @@ scope do
     get "/context"
 
     assert last_response.body["App"]
+  end
+
+  test "render halts request" do
+    get "/halt"
+
+    assert true
   end
 end
