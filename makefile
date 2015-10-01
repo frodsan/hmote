@@ -1,8 +1,6 @@
-.DEFAULT_GOAL := test
 .PHONY: test
 
-gem:
-	gem build *.gemspec
+default: test
 
 test:
-	cutest test/*.rb
+	@cutest -r ./test/helper.rb ./test/*.rb

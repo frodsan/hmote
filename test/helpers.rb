@@ -1,5 +1,3 @@
-require_relative "helper"
-
 class Cutest::Scope
   include HMote::Helpers
 

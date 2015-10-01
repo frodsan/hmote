@@ -1,5 +1,3 @@
-require_relative "helper"
-
 scope("parsing") do
   test "assignment" do
     template = HMote.parse("{{ 1 + 2 }}")
