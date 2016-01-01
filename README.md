@@ -1,4 +1,4 @@
-hmote
+HMote [![Build Status](https://travis-ci.org/frodsan/hmote.svg)](https://travis-ci.org/frodsan/hmote)
 =====
 
 Minimal template engine with default escaping.
@@ -8,6 +8,27 @@ Description
 
 HMote is a fork of [Mote][mote] that uses [Hache][hache]
 to auto-escape HTML special characters.
+
+Installation
+------------
+
+Add this line to your application's Gemfile:
+
+```ruby
+gem "hmote"
+```
+
+And then execute:
+
+```
+$ bundle
+```
+
+Or install it yourself as:
+
+```
+$ gem install hmote
+```
 
 Basic Usage
 -----------
@@ -135,19 +156,34 @@ Related projects:
 Contributing
 ------------
 
-- Fork the project.
-- Use `make install` to install dependencies.
-- Use `make test` to run the test suite.
-- Create a pull request with your changes.
-
-Installation
-------------
+Fork the project with:
 
 ```
-$ gem install hmote
+$ git clone git@github.com:frodsan/hmote.git
 ```
 
+To install dependencies, use:
+
+```
+$ bundle install
+```
+
+To run the test suite, do:
+
+```
+$ rake test
+```
+
+For bug reports and pull requests use [GitHub][issues].
+
+License
+-------
+
+HMote is released under the [MIT License][mit].
+
+[mit]: http://www.opensource.org/licenses/MIT
 [mote]: https://github.com/soveran/mote
 [hache]: https://github.com/harmoni/hache
 [hmote-render]: https://github.com/harmoni/hmote-render
+[issues]: https://github.com/frodsan/hmote/issues
 [xss]: http://en.wikipedia.org/wiki/Cross-Site_Scripting
