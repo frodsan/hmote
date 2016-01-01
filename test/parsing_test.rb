@@ -1,4 +1,6 @@
-scope("parsing") do
+require_relative "helper"
+
+class ParsingTest < Minitest::Test
   test "assignment" do
     template = HMote.parse("{{ 1 + 2 }}")
 

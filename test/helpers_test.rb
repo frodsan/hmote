@@ -1,14 +1,14 @@
-class Cutest::Scope
+require_relative "helper"
+
+class HelpersTest < Minitest::Test
   include HMote::Helpers
+
+  setup do
+    hmote_cache.clear
+  end
 
   def foo
     "foo"
-  end
-end
-
-scope("helpers") do
-  prepare do
-    hmote_cache.clear
   end
 
   test "using functions in the context" do
@@ -16,7 +16,7 @@ scope("helpers") do
   end
 
   test "passing in a context" do
-    assert_raise(NameError) do
+    assert_raises(NameError) do
       hmote("test/foo.mote", {}, TOPLEVEL_BINDING)
     end
   end
