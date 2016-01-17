@@ -1,3 +1,4 @@
+require "bundler/setup"
 require "benchmark/ips"
 
 def template_path(template)

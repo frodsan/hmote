@@ -14,7 +14,6 @@ Gem::Specification.new do |s|
   s.test_files = Dir["test/**/*.rb"]
 
   s.add_dependency "hache", "~> 1.1"
-  s.add_development_dependency "benchmark-ips", "~> 2.3"
   s.add_development_dependency "minitest", "~> 5.8"
   s.add_development_dependency "minitest-sugar", "~> 2.1"
   s.add_development_dependency "rake", "~> 10.0"
