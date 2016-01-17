@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Copyright (c) 2011-2016 Francesco Rodríguez
 # Copyright (c) 2011-2015 Michel Martens
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -29,25 +32,27 @@ class HMote
 
   def self.parse(template, context = self, vars = [])
     terms = template.split(PATTERN)
-    parts = "Proc.new do |params, __o|\n params ||= {}; __o ||= ''\n"
+    parts = "Proc.new do |params, __o|\n params ||= {}; __o ||= ''\n".dup
 
-    vars.each do |var|
-      parts << sprintf("%s = params[%p]\n", var, var)
-    end
+    vars.each { |var| parts << format("%s = params[%p]\n", var, var) }
 
     while (term = terms.shift)
-      case term
-      when "<?"  then parts << "#{terms.shift}\n"
-      when "%"   then parts << "#{terms.shift}\n"
-      when "{{"  then parts << "__o << Hache.h((#{terms.shift}).to_s)\n"
-      when "{{!" then parts << "__o << (#{terms.shift}).to_s\n"
-      else            parts << "__o << #{term.dump}\n"
-      end
+      parts << parse_expression(terms, term)
     end
 
     parts << "__o; end"
 
     compile(context, parts)
+  end
+
+  def self.parse_expression(terms, term)
+    case term
+      when "<?"  then terms.shift + "\n"
+      when "%"   then terms.shift + "\n"
+      when "{{"  then "__o << Hache.h((" + terms.shift + ").to_s)\n"
+      when "{{!" then "__o << (" + terms.shift + ").to_s\n"
+      else            "__o << " + term.dump + "\n"
+    end
   end
 
   def self.compile(context, parts)
