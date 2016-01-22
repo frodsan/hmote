@@ -8,14 +8,14 @@ def benchmark(&block)
   Benchmark.ips(&block)
 end
 
-def memory(burn: 5, trace: false)
+def memory(desc, burn: 5, trace: false)
   stats = AllocationStats.new(burn: burn).trace { yield }
 
   allocations = stats.allocations.all.size
   memsize = stats.allocations.bytes.to_a.inject(&:+)
 
-  puts(allocations: allocations, memsize: memsize)
-  puts(stats.allocations(alias_paths: true).to_text) if trace
+  puts("#{ desc } : #{ allocations } allocations - #{ memsize } memsize")
+  puts(stats.allocations(alias_paths: true).to_text) if ENV["TRACE"]
 end
 
 include HMote::Helpers

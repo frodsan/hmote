@@ -18,9 +18,3 @@ end
 # Comparison:
 #                hmote:   376579.0 i/s
 #                rails:   180705.7 i/s - 2.08x slower
-
-memory { __rails(text: text) }
-# {:allocations=>11, :memsize=>1078}
-
-memory { __hmote(text: text) }
-# {:allocations=>6, :memsize=>479}
