@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 require_relative "helper"
 
-text = %q(some text without escapable characters).html_safe
+text = "some text without escapable characters".html_safe
 
 benchmark do |x|
   x.report("hmote") { __hmote(text: text) }

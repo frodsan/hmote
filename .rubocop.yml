@@ -1,0 +1,1 @@
+inherit_from: https://gitlab.com/frodsan/dotfiles/raw/master/.rubocop.yml

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative "helper"
 
 template = MOTE_TEMPLATE

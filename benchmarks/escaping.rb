@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative "helper"
 
 text = %q(some < text > inside & these " escapable' characters/1234)
@@ -18,7 +20,6 @@ end
 # Comparison:
 #                hmote:   141794.6 i/s
 #                rails:    92098.2 i/s - 1.54x slower
-
 
 memory { __rails(text: text) }
 # {:allocations=>19, :memsize=>2053}

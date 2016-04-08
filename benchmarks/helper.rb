@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "bundler/setup"
 require "action_view"
 require "allocation_stats"
@@ -8,7 +10,7 @@ def benchmark(&block)
   Benchmark.ips(&block)
 end
 
-def memory(desc, burn: 5, trace: false)
+def memory(desc, burn: 5)
   stats = AllocationStats.new(burn: burn).trace { yield }
 
   allocations = stats.allocations.all.size

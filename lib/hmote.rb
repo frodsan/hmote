@@ -47,11 +47,11 @@ class HMote
 
   def self.parse_expression(terms, term)
     case term
-      when "<?"  then terms.shift + "\n"
-      when "%"   then terms.shift + "\n"
-      when "{{"  then "__o << Hache.h((" + terms.shift + ").to_s)\n"
-      when "{{!" then "__o << (" + terms.shift + ").to_s\n"
-      else            "__o << " + term.dump + "\n"
+    when "<?"  then terms.shift + "\n"
+    when "%"   then terms.shift + "\n"
+    when "{{"  then "__o << Hache.h((" + terms.shift + ").to_s)\n"
+    when "{{!" then "__o << (" + terms.shift + ").to_s\n"
+    else            "__o << " + term.dump + "\n"
     end
   end
 

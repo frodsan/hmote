@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative "helper"
 
 class ParsingTest < Minitest::Test
@@ -8,7 +10,7 @@ class ParsingTest < Minitest::Test
   end
 
   test "control flow" do
-    template = (<<-EOT).gsub(/ {4}/, "")
+    template = <<-EOT.gsub(/ {4}/, "")
     % if false
       false
     % else
@@ -22,7 +24,7 @@ class ParsingTest < Minitest::Test
   end
 
   test "parameters" do
-    template = (<<-EOT).gsub(/ {4}/, "")
+    template = <<-EOT.gsub(/ {4}/, "")
     % params[:n].times do
     *
     % end
@@ -46,7 +48,10 @@ class ParsingTest < Minitest::Test
 
   test "context" do
     context = Object.new
-    def context.user; "Bruno"; end
+
+    def context.user
+      "Bruno"
+    end
 
     example = HMote.parse("{{ user }}", context)
 
@@ -66,7 +71,7 @@ class ParsingTest < Minitest::Test
   end
 
   test "multi-line XML-style directives" do
-    template = (<<-EOT).gsub(/^    /, "")
+    template = <<-EOT.gsub(/^    /, "")
     <?
       # Multiline code evaluation
       lucky = [1, 3, 7, 9, 13, 15]
@@ -81,7 +86,7 @@ class ParsingTest < Minitest::Test
   end
 
   test "preserve XML directives" do
-    template = (<<-EOT).gsub(/^    /, "")
+    template = <<-EOT.gsub(/^    /, "")
     <?xml "hello" ?>
     EOT
 
