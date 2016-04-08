@@ -6,8 +6,8 @@ Gem::Specification.new do |s|
   s.summary     = "A minimum operational template that escapes HTML tags by default"
   s.description = s.summary
   s.author      = "Francesco Rodríguez"
-  s.email       = "frodsan@protonmail.ch"
-  s.homepage    = "https://github.com/frodsan/hmote"
+  s.email       = "frodsan@hello.com"
+  s.homepage    = "https://gitlab.com/frodsan/hmote"
   s.license     = "MIT"
 
   s.files      = Dir["LICENSE", "README.md", "lib/**/*.rb"]
