@@ -1,4 +1,4 @@
-HMote [![Build Status](https://travis-ci.org/frodsan/hmote.svg)](https://travis-ci.org/frodsan/hmote)
+hmote [![Build Status](https://gitlab.com/frodsan/hmote/badges/master/build.svg)](https://gitlab.com/frodsan/hmote/builds)
 =====
 
 Minimal template engine with default escaping.
@@ -6,7 +6,7 @@ Minimal template engine with default escaping.
 Description
 -----------
 
-HMote is a fork of [Mote][mote] that uses [Hache][hache]
+hmote is a fork of [Mote][mote] that uses [Hache][hache]
 to auto-escape HTML special characters.
 
 Installation
@@ -43,13 +43,13 @@ template.call
 # => "your template goes here!"
 ```
 
-HMote recognizes three tags to evaluate Ruby code: `%`, `{{}}` and `<? ?>`.
+hmote recognizes three tags to evaluate Ruby code: `%`, `{{}}` and `<? ?>`.
 The difference between them is that while the `%` and `<? ?>` tags only
 evaluate the code, the `{{}}` tag also prints the result to the template.
 
 Imagine that your template looks like this:
 
-```ruby
+```
 % # single-line code
 % gems = ["rack", "cuba", "hmote"]
 
@@ -98,7 +98,7 @@ template.call(name: "Ruby")
 Auto-escaping
 -------------
 
-By default, HMote escapes HTML special characters to prevent [XSS][xss]
+By default, hmote escapes HTML special characters to prevent [XSS][xss]
 attacks. You can start the expression with an exclamation mark to disable
 escaping for that expression:
 
@@ -151,7 +151,7 @@ hmote("foo.mote", a: 1, b: 2)
 Related projects:
 -----------------
 
-- [hmote-render][hmote-render]: HMote plugin for Cuba.
+- [hmote-render][hmote-render]: hmote plugin for Cuba.
 
 Contributing
 ------------
@@ -159,7 +159,7 @@ Contributing
 Fork the project with:
 
 ```
-$ git clone git@github.com:frodsan/hmote.git
+$ git clone git@gitlab.com:frodsan/hmote.git
 ```
 
 To install dependencies, use:
@@ -174,16 +174,16 @@ To run the test suite, do:
 $ rake test
 ```
 
-For bug reports and pull requests use [GitHub][issues].
+For bug reports and pull requests use [GitLab][issues].
 
 License
 -------
 
-HMote is released under the [MIT License][mit].
+hmote is released under the [MIT License][mit].
 
 [mit]: http://www.opensource.org/licenses/MIT
 [mote]: https://github.com/soveran/mote
-[hache]: https://github.com/harmoni/hache
+[hache]: https://gitlab.com/frodsan/hache
 [hmote-render]: https://github.com/harmoni/hmote-render
-[issues]: https://github.com/frodsan/hmote/issues
+[issues]: https://gitlab.com/frodsan/hmote/issues
 [xss]: http://en.wikipedia.org/wiki/Cross-Site_Scripting
