@@ -34,7 +34,7 @@ class HMote
     terms = template.split(PATTERN)
     parts = "Proc.new do |params, __o|\n params ||= {}; __o ||= ''\n".dup
 
-    vars.each { |var| parts << format("%s = params[%p]\n", var, var) }
+    vars.each { |var| parts << sprintf("%s = params[%p]\n", var, var) }
 
     while (term = terms.shift)
       parts << parse_expression(terms, term)
