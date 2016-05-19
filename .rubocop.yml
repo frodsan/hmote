@@ -1,1 +1,1 @@
-inherit_from: https://gitlab.com/frodsan/dotfiles/raw/master/.rubocop.yml
+inherit_from: https://raw.githubusercontent.com/frodsan/dotfiles/master/.rubocop.yml
