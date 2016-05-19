@@ -148,11 +148,6 @@ For example:
 hmote("foo.mote", a: 1, b: 2)
 ```
 
-Related projects:
------------------
-
-- [hmote-render][hmote-render]: hmote plugin for Cuba.
-
 Contributing
 ------------
 
@@ -184,6 +179,5 @@ hmote is released under the [MIT License][mit].
 [mit]: http://www.opensource.org/licenses/MIT
 [mote]: https://github.com/soveran/mote
 [hache]: https://gitlab.com/frodsan/hache
-[hmote-render]: https://github.com/harmoni/hmote-render
 [issues]: https://gitlab.com/frodsan/hmote/issues
 [xss]: http://en.wikipedia.org/wiki/Cross-Site_Scripting
