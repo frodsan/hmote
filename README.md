@@ -174,7 +174,7 @@ For bug reports and pull requests use [GitHub][issues].
 License
 -------
 
-hmote is released under the [MIT License][mit].
+HMote is released under the [MIT License][mit].
 
 [mit]: http://www.opensource.org/licenses/MIT
 [mote]: https://github.com/soveran/mote
