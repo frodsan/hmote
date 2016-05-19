@@ -1,4 +1,4 @@
-hmote [![Build Status](https://gitlab.com/frodsan/hmote/badges/master/build.svg)](https://gitlab.com/frodsan/hmote/builds)
+hmote
 =====
 
 Minimal template engine with default escaping.
@@ -43,7 +43,7 @@ template.call
 # => "your template goes here!"
 ```
 
-hmote recognizes three tags to evaluate Ruby code: `%`, `{{}}` and `<? ?>`.
+Hmote recognizes three tags to evaluate Ruby code: `%`, `{{}}` and `<? ?>`.
 The difference between them is that while the `%` and `<? ?>` tags only
 evaluate the code, the `{{}}` tag also prints the result to the template.
 
@@ -154,7 +154,7 @@ Contributing
 Fork the project with:
 
 ```
-$ git clone git@gitlab.com:frodsan/hmote.git
+$ git clone git@github.com:frodsan/hmote.git
 ```
 
 To install dependencies, use:
@@ -169,7 +169,7 @@ To run the test suite, do:
 $ rake test
 ```
 
-For bug reports and pull requests use [GitLab][issues].
+For bug reports and pull requests use [GitHub][issues].
 
 License
 -------
@@ -178,6 +178,6 @@ hmote is released under the [MIT License][mit].
 
 [mit]: http://www.opensource.org/licenses/MIT
 [mote]: https://github.com/soveran/mote
-[hache]: https://gitlab.com/frodsan/hache
-[issues]: https://gitlab.com/frodsan/hmote/issues
+[hache]: https://github.com/frodsan/hache
+[issues]: https://github.com/frodsan/hmote/issues
 [xss]: http://en.wikipedia.org/wiki/Cross-Site_Scripting
