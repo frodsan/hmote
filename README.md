@@ -1,4 +1,4 @@
-hmote
+HMote [![Build Status](https://travis-ci.org/frodsan/hmote.svg)](https://travis-ci.org/frodsan/hmote)
 =====
 
 Minimal template engine with default escaping.
@@ -6,7 +6,7 @@ Minimal template engine with default escaping.
 Description
 -----------
 
-hmote is a fork of [Mote][mote] that uses [Hache][hache]
+HMote is a fork of [Mote][mote] that uses [Hache][hache]
 to auto-escape HTML special characters.
 
 Installation
@@ -43,7 +43,7 @@ template.call
 # => "your template goes here!"
 ```
 
-Hmote recognizes three tags to evaluate Ruby code: `%`, `{{}}` and `<? ?>`.
+HMote recognizes three tags to evaluate Ruby code: `%`, `{{}}` and `<? ?>`.
 The difference between them is that while the `%` and `<? ?>` tags only
 evaluate the code, the `{{}}` tag also prints the result to the template.
 
