@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
   s.files      = Dir["LICENSE", "README.md", "lib/**/*.rb"]
   s.test_files = Dir["test/**/*.rb"]
 
-  s.add_dependency "hache", "~> 1.1"
+  s.add_dependency "hache", "~> 2.0"
   s.add_development_dependency "minitest", "~> 5.8"
   s.add_development_dependency "minitest-sugar", "~> 2.1"
   s.add_development_dependency "rake", "~> 10.0"
