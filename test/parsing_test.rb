@@ -96,11 +96,11 @@ class ParsingTest < Minitest::Test
   end
 
   test "escapes by default" do
-    text = %q(<>&"'/)
+    text = %q(<>&"')
     template = HMote.parse("{{ params[:text] }}")
     result = template.call(text: text)
 
-    assert_equal("&lt;&gt;&amp;&quot;&#x27;&#x2F;", result)
+    assert_equal("&lt;&gt;&amp;&#39;&#34;", result)
   end
 
   test "no escaping please" do
