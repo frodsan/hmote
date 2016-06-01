@@ -5,8 +5,8 @@ Gem::Specification.new do |s|
   s.version     = HMote::VERSION
   s.summary     = "A minimum operational template that escapes HTML tags by default"
   s.description = s.summary
-  s.author      = "Francesco Rodríguez"
-  s.email       = "frodsan@hello.com"
+  s.author      = "Francesco Rodriguez"
+  s.email       = "frodsan@protonmail.com"
   s.homepage    = "https://github.com/frodsan/hmote"
   s.license     = "MIT"
 
